@@ -347,6 +347,20 @@ nav {
     filter: grayscale(0) contrast(1.1) brightness(1.05);
 }
 
+@media (max-width: 1024px) {
+    .portfolio-item.in-view {
+        border-color: #ffffff;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        transform: translateY(-8px);
+    }
+    
+    .portfolio-item.in-view .portfolio-img,
+    .portfolio-item.in-view .mosaic-grid {
+        transform: scale(1.05);
+        filter: grayscale(0) contrast(1.1) brightness(1.05);
+    }
+}
+
 .mosaic-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -410,6 +424,18 @@ nav {
 .portfolio-item:hover .dark-ph {
     transform: scale(1.02);
     color: var(--text-primary);
+}
+
+@media (max-width: 1024px) {
+    .portfolio-item.in-view .overlay-text span {
+        transform: translateY(0);
+        opacity: 1;
+    }
+
+    .portfolio-item.in-view .dark-ph {
+        transform: scale(1.02);
+        color: var(--text-primary);
+    }
 }
 
 /* :: Footer :: */

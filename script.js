@@ -25,6 +25,21 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
+    // Observer to trigger hover effect on mobile when scrolling past
+    const mobileHoverObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+            } else {
+                entry.target.classList.remove('in-view');
+            }
+        });
+    }, { root: null, rootMargin: '-25% 0px -25% 0px', threshold: 0 });
+
+    document.querySelectorAll('.portfolio-item').forEach(item => {
+        mobileHoverObserver.observe(item);
+    });
+
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
