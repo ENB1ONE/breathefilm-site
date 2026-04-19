@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Apply observer to manifesto text and portfolio items
-    const scrollElements = document.querySelectorAll('.manifesto-text p, .portfolio-item');
+    // Apply observer to manifesto text, portfolio items and gallery items
+    const scrollElements = document.querySelectorAll('.manifesto-text p, .portfolio-item, .gallery-item, .internal-hero');
     scrollElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { root: null, rootMargin: '-25% 0px -25% 0px', threshold: 0 });
 
-    document.querySelectorAll('.portfolio-item').forEach(item => {
+    document.querySelectorAll('.portfolio-item, .gallery-item').forEach(item => {
         mobileHoverObserver.observe(item);
     });
 
