@@ -16,8 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, observerOptions);
 
-    // Apply observer to about text, portfolio items and gallery items
-    const scrollElements = document.querySelectorAll('.about-text p, .portfolio-item, .gallery-item, .internal-hero');
+    // Apply observer to manifesto text, portfolio items and gallery items
+    const scrollElements = document.querySelectorAll('.manifesto-text p, .portfolio-item, .gallery-item, .internal-hero');
     scrollElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
