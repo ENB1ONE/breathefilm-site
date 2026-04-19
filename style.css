@@ -246,8 +246,12 @@ nav {
 }
 
 /* :: Manifesto :: */
+#manifesto {
+    scroll-margin-top: 100px;
+}
+
 .manifesto-section {
-    padding: var(--space-xl) 5%;
+    padding: var(--space-xl) 5% var(--space-lg) 5%;
     position: relative;
     z-index: 10;
 }
@@ -255,7 +259,7 @@ nav {
 .manifesto-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: var(--space-lg);
+    gap: 50px;
     background: var(--glass-bg);
     backdrop-filter: blur(24px);
     -webkit-backdrop-filter: blur(24px);
@@ -264,6 +268,8 @@ nav {
     padding: var(--space-lg);
     box-shadow: var(--glass-shadow);
     transition: var(--transition-smooth);
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .manifesto-grid:hover {
@@ -273,10 +279,10 @@ nav {
 }
 
 .manifesto-text p {
-    font-size: clamp(1.2rem, 1.8vw, 1.75rem);
-    line-height: 1.5;
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    line-height: 1.8;
     margin-bottom: var(--space-md);
-    color: #444444;
+    color: var(--text-muted);
     transition: color var(--transition-smooth);
     font-weight: 400;
 }
