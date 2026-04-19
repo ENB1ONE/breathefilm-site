@@ -245,44 +245,37 @@ nav {
     filter: sepia(0) contrast(1.1) brightness(1);
 }
 
-/* :: Manifesto :: */
-.manifesto-section {
+/* :: Sobre Nós :: */
+.about-section {
     padding: var(--space-xl) 5%;
-    position: relative;
-    z-index: 10;
+    background: var(--bg-primary);
 }
 
-.manifesto-grid {
+.about-grid {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: var(--space-lg);
-    background: var(--glass-bg);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius);
-    padding: var(--space-lg);
-    box-shadow: var(--glass-shadow);
-    transition: var(--transition-smooth);
+    gap: 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+    transition: transform 0.6s var(--ease-out);
 }
 
-.manifesto-grid:hover {
+.about-grid:hover {
+    transform: translateY(-5px);
+}
+
+.about-text p {
+    font-size: clamp(1.1rem, 1.5vw, 1.4rem);
+    line-height: 1.8;
+    color: var(--text-muted);
+    margin-bottom: var(--space-md);
+    transition: color 0.4s ease;
+}
+
+.about-text p:hover {
     background: var(--glass-highlight);
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.12);
-}
-
-.manifesto-text p {
-    font-size: clamp(1.2rem, 1.8vw, 1.75rem);
-    line-height: 1.5;
-    margin-bottom: var(--space-md);
-    color: #444444;
-    transition: color var(--transition-smooth);
-    font-weight: 400;
-}
-
-.manifesto-text p:hover {
-    color: var(--text-primary);
 }
 
 /* :: Work / Portfolio :: */
@@ -749,7 +742,7 @@ footer p, footer a {
 
 /* :: Responsive Tweaks :: */
 @media (max-width: 1024px) {
-    .manifesto-grid {
+    .about-grid {
         grid-template-columns: 1fr;
         padding: var(--space-md);
     }
@@ -801,13 +794,14 @@ footer p, footer a {
         margin-top: 0;
     }
     
-    .manifesto-section {
+    .about-section {
         padding: var(--space-lg) 5%;
     }
-    .manifesto-grid {
+    .about-grid {
         padding: 1.5rem;
+        transform: none !important;
     }
-    .manifesto-text p {
+    .about-text p {
         font-size: 1.1rem;
     }
     
